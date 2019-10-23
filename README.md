@@ -2,7 +2,7 @@
 - lodash
 - styled-components
 
-```react
+```javascript
 <Table
   data={sampleData}
   index
