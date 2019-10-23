@@ -21,4 +21,4 @@
 />
 ```
 
-<img src='./screenshot.png' alt='' width='300' />
+<img src='./screenshot.png' alt='' />
