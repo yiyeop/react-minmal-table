@@ -90,6 +90,16 @@ const Table = ({
       : setSortData(_.sortBy(data, [condition]));
   };
 
+  const checkAll = e => {
+    const { checked } = e.target;
+    const allCheckBox = document.getElementsByClassName("row-check");
+    for (const box of allCheckBox) {
+      box.checked = checked;
+    }
+
+    checked ? setSelectedArr(viewData) : setSelectedArr([]);
+  };
+
   return (
     <div
       style={{
@@ -123,20 +133,7 @@ const Table = ({
           <tr>
             {checkbox && (
               <th style={{ textAlign: "center" }}>
-                <input
-                  type="checkbox"
-                  onChange={e => {
-                    const { checked } = e.target;
-                    const allCheckBox = document.getElementsByClassName(
-                      "row-check"
-                    );
-                    for (let i = 0; i < allCheckBox.length; i++) {
-                      allCheckBox[i].checked = checked;
-                    }
-
-                    checked ? setSelectedArr(viewData) : setSelectedArr([]);
-                  }}
-                />
+                <input type="checkbox" onChange={checkAll} />
               </th>
             )}
             {index && (
